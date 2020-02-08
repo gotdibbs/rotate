@@ -1,6 +1,6 @@
-# Brotate
+# Rotate
 
-Quick hack of a slack app to run a rotation of people. Installs a command `/brotate` which lets you `set` a rotation, run `next` to iterate through people, and view the `current` status of the rotation.
+Quick hack of a slack app to run a rotation of people. Installs a command `/rotate` which lets you `set` a rotation, run `next` to iterate through people, and view the `current` status of the rotation.
 
 ## Installation
 1. Visit https://brotate-707ca.firebaseapp.com/

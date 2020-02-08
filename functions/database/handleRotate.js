@@ -74,7 +74,7 @@ function sendSetHelp(command, installation) {
         method: 'POST',
         json: true,
         body: {
-            text: 'To set or update the rotation for this channel, try this: "/brotate set Person 1, Person 2, Person 3"'
+            text: 'To set or update the rotation for this channel, try this: "/rotate set Person 1, Person 2, Person 3"'
         }
     };
 
@@ -87,7 +87,7 @@ function sendRequestSet(command, installation) {
         method: 'POST',
         json: true,
         body: {
-            text: 'You need to set a rotation first.\nTo set a new rotation, try this: "/brotate set Person 1, Person 2, Person 3"'
+            text: 'You need to set a rotation first.\nTo set a new rotation, try this: "/rotate set Person 1, Person 2, Person 3"'
         }
     };
 
