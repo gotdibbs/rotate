@@ -17,6 +17,13 @@ module.exports = functions.https.onRequest(async (request, response) => {
     // Handle the commands later, Slack expect this request to return within 3000ms
     await admin.database().ref('commands/rotate').push(command);
 
+    const installationRef = admin.database().ref('installations').child(command.team_id);
+    const installation = (await installationRef.once('value')).val();
+
+    if (installation && installation.scope && installation.scope.includes('chat:write:bot')) {
+        return response.contentType('json').status(200).send();
+    }
+    
     return response.contentType('json').status(200).send({
         'response_type': 'ephemeral',
         'text': 'Your wish is my command!'

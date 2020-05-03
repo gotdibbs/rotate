@@ -34,9 +34,12 @@ module.exports = functions.https.onRequest(async (request, response) => {
     await admin.database().ref('installations').child(result.team_id).update({
         token: result.access_token,
         team: result.team_id,
+        name: result.team_name,
+        scope: result.scope,
         [result.incoming_webhook.channel_id]: {
             url: result.incoming_webhook.url,
-            channel: result.incoming_webhook.channel_id
+            channel: result.incoming_webhook.channel_id,
+            name: result.incoming_webhook.channel
         }
     });
 
